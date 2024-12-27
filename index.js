@@ -12,6 +12,6 @@ const app=express()
 connectdb()
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
-app.use(express.static(path.join(__dirname,'./views')))
+app.use(express.static(path.join(__dirname,'./public')))
 app.use('',router)
 export default app;
