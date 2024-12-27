@@ -15,6 +15,4 @@ app.use(express.urlencoded({extended:true}))
 app.use(express.static(path.join(__dirname,'./views')))
 app.use('/',router2)
 app.use('',router)
-app.listen(process.env.PORT,()=>{
-    console.log('server running...')
-})
+export default app;
