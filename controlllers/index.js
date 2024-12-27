@@ -13,9 +13,6 @@ function generateRandomString(n) {
   }
   return randomString;
 }
-const html=async(req,res)=>{
-  return res.sendFile((path.join(__dirname,'./views','index.html')))
-}
 const requireurl = async (req, res) => {
   if (!req.body.url) {
     return res.status(400).json("Please enter a URL.");
@@ -63,8 +60,8 @@ const drop=async(req,res)=>{
       const sort=await url.find().sort({createdAt:1}).limit(num)
       const deleteids=sort.map((i)=>i._id)
        await url.deleteMany({_id:{$in:deleteids}})
-       const a='';
+       const a='hi babes';
        res.end(a);
     
 }
-export{requireurl,redirect,drop,html}
+export{requireurl,redirect,drop}
