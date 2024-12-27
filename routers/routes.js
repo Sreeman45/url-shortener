@@ -1,6 +1,6 @@
 import express from 'express'
 const router=express.Router()
-import {requireurl,redirect,drop,html} from '../controlllers/index.js'
+import {requireurl,redirect,drop} from '../controlllers/index.js'
 
 
 router.post('/url',requireurl)
