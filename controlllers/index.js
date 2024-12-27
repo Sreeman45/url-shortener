@@ -24,7 +24,7 @@ const requireurl = async (req, res) => {
     let randomId;
 
     while (!isUnique){
-      randomId = generateRandomString(8); 
+      randomId = generateRandomString(6); 
       const existingDoc = await url.findOne({ Id: randomId });
       if (!existingDoc) {
         isUnique = true;
@@ -36,7 +36,7 @@ const requireurl = async (req, res) => {
       visithistory: []
     });
 
-    return res.status(200).json({shorturl:`https://shorten-url.vercel.app/${randomId}`});
+    return res.status(200).json({shorturl:`https://url-shortener-omega-gray.vercel.app/${randomId}`});
   } catch (err) {
     console.error("Error creating URL:", err);
     res.send(err)
